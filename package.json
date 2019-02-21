@@ -1,0 +1,47 @@
+{
+  "name": "SpeechToText",
+  "version": "1.0.0",
+  "description": "Application that allows users to upload/record speech/conversation of up to 60 minutes, translates the audio and sends a text transcript to the user’s email upon completion.",
+  "main": "server.js",
+  "scripts": {
+    "client-install": "npm install --prefix client",
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "client-test": "npm run test --prefix client",
+    "test": "jest",
+    "dev-test": "concurrently \"npm run test\" \"npm run client-test\"",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "npm install --prefix client && npm run build --prefix client"
+  },
+  "author": "Vinh Tuong MAI",
+  "license": "MIT",
+  "dependencies": {
+    "@google-cloud/speech": "^2.3.0",
+    "@google-cloud/storage": "^2.4.2",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.3",
+    "concurrently": "^4.0.1",
+    "express": "^4.16.4",
+    "i": "^0.3.6",
+    "is-empty": "^1.2.0",
+    "jsonwebtoken": "^8.3.0",
+    "mime-types": "^2.1.22",
+    "mongoose": "^5.3.11",
+    "multer": "^1.4.1",
+    "nodemailer": "^5.1.1",
+    "npm": "^6.8.0",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "socket.io": "^2.2.0",
+    "uuid": "^3.3.2",
+    "validator": "^10.9.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.3.3",
+    "@babel/preset-env": "^7.3.1",
+    "babel-jest": "^24.1.0",
+    "jest": "^24.1.0",
+    "mockingoose": "^2.12.0"
+  }
+}

@@ -1,0 +1,329 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  background-color: #0d0f22;
+  height: 100vh;
+  overflow-x: hidden; }
+
+#root > div > section {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  padding: 0 15px 20px; }
+  #root > div > section > div {
+    max-width: 100%;
+    width: 400px;
+    color: #fff; }
+
+.error {
+  font-style: italic;
+  color: red; }
+
+.link-button {
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  outline: none;
+  color: #3073DB;
+  cursor: pointer;
+  font-size: 14px;
+  text-decoration: none; }
+  .link-button:hover {
+    color: #00AEF0; }
+
+.button {
+  padding: 10px 8px;
+  border-radius: 50px;
+  font-size: 16px;
+  line-height: 22px;
+  transition: all 200ms ease-in-out;
+  outline: none;
+  color: #fff;
+  background-color: #3073DB;
+  font-weight: 600;
+  min-width: 120px;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  user-select: none;
+  text-decoration: none; }
+  .button:hover:not(.disabled) {
+    cursor: pointer;
+    background-color: #0078CA; }
+  .button.disabled {
+    color: #1E2247;
+    pointer-events: none;
+    background-color: #1D3B74; }
+
+.page-title {
+  margin: 0 -15px;
+  padding: 0 15px;
+  color: #7C90D1;
+  height: 40px;
+  margin-bottom: 40px;
+  line-height: 40px;
+  text-align: center;
+  position: relative; }
+
+.separator {
+  display: block;
+  position: relative;
+  margin-top: 50px;
+  height: 20px; }
+  .separator:after {
+    content: " ";
+    position: absolute;
+    bottom: 50%;
+    right: -15px;
+    left: -15px;
+    border-bottom: 1px solid #1D3B74; }
+
+.input {
+  display: block;
+  padding: 10px 8px 10px 15px;
+  border-radius: 50px;
+  font-size: 16px;
+  line-height: 22px;
+  transition: all 200ms ease-in-out;
+  outline: none;
+  border: 1.5px solid #BDC0CE;
+  background-color: transparent;
+  color: #fff; }
+  .input:focus {
+    border-color: #3073DB;
+    caret-color: #3073DB; }
+
+select {
+  height: 30px;
+  width: 250px;
+  background-color: transparent;
+  color: #fff;
+  font-size: 16px;
+  border-bottom: 1px solid #fff;
+  border-radius: 10px;
+  outline: none;
+  margin-right: 10px;
+}
+
+progress {
+  border: 1px solid transparent;
+  height: 6px;
+  width: 250px;
+  vertical-align: middle;
+}
+
+.switcher {
+  display: inline-block;
+  width: 32px;
+  height: 16px;
+  border-radius: 8px;
+  background-color: #82D6F5;
+  position: relative;
+  vertical-align: bottom;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.switcher:after {
+  content: ' ';
+  position: absolute;
+  top: -2px;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #00AEF0;
+}
+
+.switcher:not(.active) {
+  background-color: #bbb;
+}
+
+.switcher:not(.active):after {
+  background-color: #aaa;
+  left: 0;
+}
+
+.LogIn form {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.LogIn form input {
+  margin-top: 5px;
+}
+
+.Account .username {
+  margin-bottom: 30px;
+}
+
+.Account .username span {
+  font-weight: 600;
+  color: #00AEF0;
+}
+
+.Account .sign-out {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  bottom: 0;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.Account .record-icon {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-color: #ccc;
+  border-radius: 12px;
+  margin: 0 15px;
+  vertical-align: middle;
+}
+
+.Account .record-icon.recording {
+  background-color: red;
+  animation: recordAnimation 1500ms linear forwards infinite;
+}
+
+.Account .result {
+  min-height: 24px;
+  border: 1px solid #fff;
+  padding: 10px;
+  overflow: auto;
+}
+
+.Account .result span:last-child {
+  color: #3bdb3e;
+}
+
+.Account .tabs-wrapper {
+  display: flex;
+  padding-bottom: 20px;
+}
+
+.Account .tabs-wrapper .tab {
+  flex: 1;
+  background-color: transparent;
+  color: #fff;
+  outline: none;
+  border: none;
+  height: 32px;
+  font-size: 18px;
+  border-bottom: 1px solid #ccc;
+}
+
+.Account .tabs-wrapper .tab.active {
+  border-bottom-color: #00AEF0;
+}
+
+.Account #track {
+  display: none;
+}
+
+.Account #track-label {
+  display: inline-block;
+  margin-right: 10px;
+  border: 1px solid transparent;
+  text-align: center;
+}
+
+.Account .progress {
+  margin-top: 15px;
+}
+
+.Account .processing span {
+  animation-name: blink;
+  animation-duration: 1.4s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+}
+
+.Account .processing span:nth-child(2) {
+  animation-delay: .2s;
+}
+
+.Account .processing span:nth-child(3) {
+  animation-delay: .4s;
+}
+
+.Account .tips {
+  font-size: 14px;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); }
+  .modal .modal-main {
+    position: fixed;
+    background: white;
+    width: 80%;
+    height: auto;
+    top: 40%;
+    left: 50%;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 400px;
+    margin: auto;
+    color: #000;
+    opacity: 0;
+    transform-origin: left;
+    transform: scale(0.1);
+    animation: modalAnimation 500ms forwards; }
+    .modal .modal-main h3 {
+      margin-top: 0; }
+    .modal .modal-main p {
+      overflow: auto;
+      white-space: pre-line;
+      max-height: 200px; }
+    .modal .modal-main .btns-wrapper {
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+      margin-top: 15px; }
+      .modal .modal-main .btns-wrapper button {
+        font-weight: 600; }
+
+@keyframes blink {
+  0% {
+    opacity: .2;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: .2;
+  }
+}
+
+@keyframes modalAnimation {
+  from {
+    opacity: 0;
+    transform: scale(0.1) translate(-50%, -50%); }
+  to {
+    opacity: 1;
+    transform: scale(1) translate(-50%, -50%); } }
+
+@keyframes recordAnimation {
+  0%{
+    box-shadow: 0px 0px 5px 0px rgba(173,0,0,.3);
+  }
+  65%{
+    box-shadow: 0px 0px 5px 13px rgba(173,0,0,.3);
+  }
+  90%{
+    box-shadow: 0px 0px 5px 13px rgba(173,0,0,0);
+  }
+}
